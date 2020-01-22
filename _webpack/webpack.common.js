@@ -33,20 +33,14 @@ module.exports = {
       title: 'My website',
       template: path.resolve(__dirname, '../_templates/client.html'),
     }),
-  ],
-  plugins: [
     new BundleAnalyzerPlugin({
       openAnalyzer: false,
       analyzerMode: 'static',
       reportFilename: path.resolve(__dirname, `../_dist/bundle.html`),
     }),
-  ],
-  plugins: [
     new Visualizer({
       filename: './visualizer.html',
     }),
-  ],
-  plugins: [
     new CleanWebpackPlugin(),
   ],
 };
