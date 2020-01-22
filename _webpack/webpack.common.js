@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const Visualizer = require('webpack-visualizer-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+//const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -40,7 +40,6 @@ module.exports = {
     }),
     new Visualizer({
       filename: './visualizer.html',
-    }),
-    new CleanWebpackPlugin(),
-  ],
+    })
+  ]
 };
