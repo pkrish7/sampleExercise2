@@ -1,5 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const Visualizer = require('webpack-visualizer-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -30,5 +33,20 @@ module.exports = {
       title: 'My website',
       template: path.resolve(__dirname, '../_templates/client.html'),
     }),
+  ],
+  plugins: [
+    new BundleAnalyzerPlugin({
+      openAnalyzer: false,
+      analyzerMode: 'static',
+      reportFilename: path.resolve(__dirname, `../_dist/bundle.html`),
+    }),
+  ],
+  plugins: [
+    new Visualizer({
+      filename: './visualizer.html',
+    }),
+  ],
+  plugins: [
+    new CleanWebpackPlugin(),
   ],
 };
